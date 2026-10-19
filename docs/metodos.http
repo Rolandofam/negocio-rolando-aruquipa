@@ -53,5 +53,11 @@ Content-Type: {{contentType}}
 {
     "title": "ejemplo"
 }
+###✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+# ELIMINA LOS ATRIBUTOS DE UN SOLO RECURSO
+
+@post = posts/1
+
+DELETE {{host}}/{{post}} HTTP/1.1
 
 
