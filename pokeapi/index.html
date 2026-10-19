@@ -44,7 +44,7 @@
 					<nav class="site-navigation position-relative text-right" role="navigation">
 						<ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
 							<li>
-								<a href="index.html" class="nav-link">Tienda</a>
+								<a href="index.html" class="nav-link">Poke-Api</a>
 							</li>
 						</ul>
 					</nav>
@@ -61,7 +61,7 @@
 			<div class="col-lg-10 offset-lg-1 col-xs-12 text-center">
 				<div class="section-top-title wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s"
 					data-wow-offset="0">
-					<h1>Tienda Web</h1>
+					<h1>Poke - API</h1>
 				</div>
 			</div>
 		</div>
@@ -73,120 +73,40 @@
 					<div class="single_blog_page">
 						<section class="section-padding">
 							<div class="container">
-								<div class="col-12">
-									<div class="card shadow-lg p-3 mb-5 bg-white rounded">
-										<div class="card-header">
-											<!-- <h4 class="card-title">Proveedor</h4>
-											<button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalProveedor">Adicionar
-												<span class="btn-icon-right"><i class="fa fa-check"></i></span>
-											</button> -->
-											<div class="row">
-												<div class="col-lg-6 offset-lg-3 col-sm-12 col-xs-12 text-center">
-													<div class="signup_form">
-														<form novalidate="" class="validate"
-															name="mc-embedded-subscribe-form" method="post" action="#">
-															<h2>Practica GitHub</h2>
-															<p>Repositorio publicado correctamente</p>
-																<h2>Teclado Gamer</h2>
-																<h3>Precio 150 Bs</h3>
-															<div class="btn-bottom">
-																<button class="btn btn-detault btn-light-bg"
-																	name="subscribe" type="button"
-																	onclick="mostrarUsuario()">Comprar</button>
-																<!-- <button class="btn btn-detault btn-light-bg"
-																	name="subscribe" type="button"
-																	onclick="limpiaUsuario()">Ofertas</button> -->
-															</div>
-															<!-- <input type="text" placeholder="Ej.:2" id="id-usuario"
-																class="form-control" name="id-usuario">
-															<div class="btn-bottom">
-																<button class="btn btn-detault btn-light-bg"
-																	name="subscribe" type="button"
-																	onclick="buscarUsuario()">Buscar</button>
-															</div>
-															<div id="mce-responses">
-																<div style="display:none" id="mce-error-response"
-																	class="response">
-																</div>
-																<div style="display:none" id="mce-success-response"
-																	class="response"></div>
-															</div> -->
-														</form>
-													</div>
+								<div class="signup_form">
+									<form novalidate="" class="validate" name="mc-embedded-subscribe-form" method="post"
+										action="#">
+										<div class="row">
+											<div class="col-10">
+												<input type="text" placeholder="Ej.: bulbasaur" id="id-usuario"
+													class="form-control" name="id-usuario">
+											</div>
+											<div class="btn-bottom">
+												<button class="btn btn-detault btn-light-bg" name="subscribe"
+													type="button" onclick="buscarUsuario()">Buscar</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="container div-center">
+								<div class="col-6 ">
+									<div id="pokemon">
+										<div class="card shadow-lg p-3 mb-5 bg-white rounded">
+											<div class="card-header">
+												<h3 class="card-title text-center">BULBASAUR</h3>
+												<img class="img-fluid"
+													src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1.png"
+													alt="" srcset="">
+												<div class="single_property_description text-center">
+													<span>Tipo: <strong>Grass</strong></span>
+													<span>Peso: <strong>69</strong></span>
+													<span>Altura: <strong>2 Baths</strong></span>
 												</div>
 											</div>
-
 										</div>
-										<!-- <div class="card-body">
-											<div class="table-responsive">
-												<table id="usuario" class="table display" style="min-width: 17%">
-													<thead class="thead-green">
-														<tr>
-															<th scope="col">#</th>
-															<th scope="col">Nombre Completo</th>
-															<th scope="col">Correo</th>
-														</tr>
-													</thead>
-													<tbody id="contenidoUsuarios">
-													</tbody>
-													<tfoot class="thead-green">
-														<tr>
-															<th>#</th>
-															<th>Nombre Completo</th>
-															<th>Correo</th>
-														</tr>
-													</tfoot>
-												</table>
-											</div>
-										</div> -->
 									</div>
 								</div>
-								<!-- <div class="row">
-															<div class="col-lg-12">
-															</div>
-															END COL 
-														</div>
-														END  ROW  -->
-								<!-- <div class="row">
-									<div class="col-lg-6 offset-lg-3 col-sm-12 col-xs-12 text-center">
-										<div class="signup_form">
-											<form novalidate="" class="validate" name="mc-embedded-subscribe-form"
-												method="post" action="#">
-												<div class="btn-bottom">
-													<button class="btn btn-detault btn-light-bg" name="subscribe"
-														type="button" onclick="mostrarUsuario()">Listar</button>
-													<button class="btn btn-detault btn-light-bg" name="subscribe"
-														type="button" onclick="limpiaTablaUsuario()">Limpiar</button>
-												</div>
-												<input type="text" placeholder="Ej.:2" id="id-usuario"
-													class="form-control" name="id-usuario">
-												<div class="btn-bottom">
-													<button class="btn btn-detault btn-light-bg" name="subscribe"
-														type="button" onclick="buscarUsuario()">Buscar</button>
-												</div>
-												<div id="mce-responses">
-													<div style="display:none" id="mce-error-response" class="response">
-													</div>
-													<div style="display:none" id="mce-success-response"
-														class="response"></div>
-												</div>
-											</form>
-										</div>
-									</div>
-									<div class="col-lg-12 offset-lg-12 col-sm-12 col-xs-12">
-										<table class="table">
-											<thead class="thead-green">
-												<tr>
-													<th scope="col">#</th>
-													<th scope="col">Nombre Completo</th>
-													<th scope="col">Correo</th>
-												</tr>
-											</thead>
-											<tbody id="contenidoUsuarios">
-											</tbody>
-										</table>
-									</div>
-								</div>END ROW  -->
 							</div>
 						</section>
 					</div>
@@ -228,7 +148,7 @@
 						<h4>Enlaces</h4>
 						<div class="footer_contact">
 							<ul>
-								<li><a href="index.html">Tienda</a></li>
+								<li><a href="index.html">Poke-Api</a></li>
 							</ul>
 						</div>
 					</div>

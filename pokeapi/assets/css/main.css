@@ -16,7 +16,7 @@
     height: 100vh; */
 }
 .caja-40 {
-    position: relative ;
+    position: relative;
     left: 40% !important;
     /* display: grid;
     place-items: center;
@@ -30,15 +30,23 @@
     height: 100vh; */
 }
 
-.site-mobile-menu-header{
+.site-mobile-menu-header {
     background-color: var(--color-blog-page);
-
 }
 
 .centrarImagen {
     display: block;
     margin: 0 auto;
 }
+
+.div-center {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center; 
+    /* align-items: center;     */
+    /* height: 100vh;  */
+}
+
 .btn-bottom {
     margin-bottom: 30px;
     /* margin-right: 50px; */
@@ -51,18 +59,30 @@
     background-color: var(--color-blog-page);
     /* color: var(--color-navbar-hover); */
 }
-th, td {
+th,
+td {
     vertical-align: middle !important; /* Centra el texto verticalmente */
 }
 
 /* .section-top-title h1{
     color:red;
 } */
-h2{
+h2 {
     color: rgb(61, 27, 61);
 }
-.signup_form h3{
+.signup_form h3 {
+    /* background: #35ac39 none repeat scroll 0 0; */
     color: black;
+}
+
+.signup_form button {
+    background: var(--color-button-hover) none repeat scroll 0 0;
+    color: black;
+}
+
+.signup_form button:hover {
+    background: var(--color-navbar);
+    color: #ffffff !important;
 }
 /* .bg-white{
     background-color: red !important;
