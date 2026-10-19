@@ -71,4 +71,53 @@ fetch(url, {
 .then(response => response.json())
 .then(data => console.log("Respuesta del servidor:", data))
 .catch(error => console.error("Error:", error));
-````
+```
+# 3. PUT
+
+## ¿Para qué sirve?
+
+El método HTTP **PUT** se utiliza principalmente para **actualizar un recurso existente** en su totalidad en un servidor. También puede usarse para **crear un nuevo recurso** en una URI (Uniform Resource Identifier) específica si este aún no existe.
+
+Una característica fundamental de PUT es que es **idempotente**. Esto significa que no importa cuántas veces se envíe la misma solicitud PUT, el resultado en el servidor será exactamente el mismo que si se hubiera enviado una sola vez. El recurso final tendrá exactamente los datos proporcionados en la solicitud, sobrescribiendo cualquier dato anterior.
+
+---
+
+## ¿Cómo se usa?
+
+Para utilizar correctamente el método PUT, se deben seguir estas convenciones RESTful:
+
+1. **URI específica**: La solicitud debe dirigirse a la dirección exacta del recurso que se desea modificar (por ejemplo, añadiendo el identificador único al final de la URL: `/posts/1`).
+2. **Cuerpo de la solicitud (Body)**: Se debe enviar la representación **completa** del recurso actualizado. A diferencia de `PATCH` (que solo envía los campos cambiados), `PUT` reemplaza todo el recurso.
+3. **Cabeceras (Headers)**: Es imprescindible incluir la cabecera `Content-Type` para indicar el formato de los datos que se están enviando (comúnmente `application/json`).
+
+---
+
+## Ejemplo Real
+
+A continuación se muestra un ejemplo utilizando la API pública de pruebas [JSONPlaceholder](https://jsonplaceholder.typicode.com/). 
+
+```javascript
+const url = "https://jsonplaceholder.typicode.com/posts/1";
+
+const datosActualizados = {
+  id: 1,
+  title: "Título actualizado con PUT",
+  body: "Este es el nuevo cuerpo completo del post reemplazado.",
+  userId: 1
+};
+
+fetch(url, {
+  method: "PUT",
+  headers: {
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  body: JSON.stringify(datosActualizados)
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log("Recurso actualizado con éxito:", data);
+  })
+  .catch(error => {
+    console.error("Error al actualizar el recurso:", error);
+  });
+  ```
