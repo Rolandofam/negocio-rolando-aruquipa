@@ -1,0 +1,63 @@
+###✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+# VARIABLES GLOBALES
+
+@protocol = https
+@hostname = jsonplaceholder.typicode.com
+@port = 443
+@host = {{protocol}}://{{hostname}}:{{port}}
+@contentType = application/json
+
+###✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+# OBTENER TODOS LOS ATRIBUTOS DEL RECURSO
+
+@post = posts/1
+
+GET {{host}}/{{post}} HTTP/1.1
+
+###✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+# CREAR LOS ATRIBUTOS DEL RECURSO
+
+@post = posts
+
+POST {{host}}/{{post}} HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "userId": 1,
+    "title": "ejemplo",
+    "body": "ejemplo"
+}
+
+###✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+# ACTUALIZAR TODOS LOS ATRIBUTOS DE UN RECURSO
+
+@post = posts/1
+
+PUT {{host}}/{{post}} HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "userId": 1,
+    "title": "ejemplo",
+    "body": "ejemplo"
+}
+
+###✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+# ACTUALIZAR PARCIALMENTE LOS ATRIBUTOS DEL RECURSO
+
+@post = posts/1
+
+PATCH {{host}}/{{post}} HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "title": "ejemplo"
+}
+###✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+# ELIMINA LOS ATRIBUTOS DE UN SOLO RECURSO
+
+@post = posts/1
+
+DELETE {{host}}/{{post}} HTTP/1.1
+
+
