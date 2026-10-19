@@ -121,3 +121,58 @@ fetch(url, {
     console.error("Error al actualizar el recurso:", error);
   });
   ```
+# 4. PATCH
+
+## ¿Para qué sirve?
+
+El método HTTP **PATCH** se utiliza para realizar **modificaciones parciales** en un recurso existente en un servidor. 
+
+A diferencia del método `PUT` (que reemplaza el recurso completo por uno nuevo), `PATCH` es eficiente y seguro porque solo envía al servidor los campos o datos específicos que necesitan ser actualizados, dejando el resto del recurso intacto. Esto ahorra ancho de banda y reduce la probabilidad de sobrescribir accidentalmente datos que no debían cambiar.
+
+---
+
+## ¿Cómo se usa?
+
+Para usar el método `PATCH`, se debe enviar una solicitud HTTP a la URI (dirección) del recurso específico que se desea modificar. 
+
+Los componentes clave de una solicitud `PATCH` son:
+1. **Método HTTP**: `PATCH`
+2. **URL**: La dirección del recurso específico (ej. `/posts/1`).
+3. **Encabezados (Headers)**: 
+   - `Content-Type`: Indica el formato de los datos enviados (comúnmente `application/json`).
+4. **Cuerpo de la solicitud (Body)**: Un objeto (generalmente en formato JSON) que contiene **únicamente** los campos que se desean actualizar.
+
+> **Nota**: El servidor debe estar configurado para aceptar y procesar solicitudes `PATCH`. La respuesta exitosa suele ser un código de estado `200 OK` (con el recurso actualizado en el cuerpo) o `204 No Content` (si no devuelve datos).
+
+---
+
+## Ejemplo Real
+
+Usaremos la API pública de pruebas [JSONPlaceholder](https://jsonplaceholder.typicode.com/), específicamente el endpoint de publicaciones (`posts`).
+
+Supongamos que queremos actualizar **solo el título** de la publicación con el ID `1`, sin modificar su `body` ni su `userId`.
+
+### 1. Ejemplo con cURL (Línea de comandos)
+```javascript
+const url = "https://jsonplaceholder.typicode.com/posts/1";
+
+const datosActualizados = {
+  title: "Este es un título actualizado con PATCH"
+};
+
+fetch(url, {
+  method: "PATCH",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(datosActualizados)
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log("Recurso actualizado:", data);
+  })
+  .catch(error => {
+    console.error("Error al actualizar:", error);
+  });
+```
+
