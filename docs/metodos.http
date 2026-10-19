@@ -14,3 +14,19 @@
 
 GET {{host}}/{{post}} HTTP/1.1
 
+###✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+# CREAR LOS ATRIBUTOS DEL RECURSO
+
+@post = posts
+
+POST {{host}}/{{post}} HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "userId": 1,
+    "title": "ejemplo",
+    "body": "ejemplo"
+}
+
+
+
