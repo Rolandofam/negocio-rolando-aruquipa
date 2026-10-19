@@ -1,0 +1,16 @@
+###✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+# VARIABLES GLOBALES
+
+@protocol = https
+@hostname = pokeapi.co
+@port = 443
+@path = /api/v2
+@host = {{protocol}}://{{hostname}}:{{port}}{{path}}
+@contentType = application/json
+
+###✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+# OBTENER TODOS LOS ATRIBUTOS DEL RECURSO
+
+@poke = pokemon/bulbasaur
+
+GET {{host}}/{{poke}} HTTP/1.1
