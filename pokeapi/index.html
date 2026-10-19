@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Api - Rest</title>
+	<link rel="stylesheet" href="assets/template/bootstrap/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="assets/template/fonts/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/template/css/fonts.css">
+	<link rel="stylesheet" href="assets/template/css/menu.css">
+	<link rel="stylesheet" href="assets/template/css/style.css">
+	<link rel="stylesheet" href="assets/template/css/responsive.css">
+	<link rel="stylesheet" href="assets/template/DataTables/datatables.min.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body data-spy="scroll" data-offset="80">
+
+	<div class="preloader">
+		<div class="status">
+			<div class="status-mes"></div>
+		</div>
+	</div>
+	<div class="site-mobile-menu site-navbar-target">
+		<div class="site-mobile-menu-header">
+			<div class="site-mobile-menu-close mt-3">
+				<span class="icon-close2 js-menu-toggle"></span>
+			</div>
+		</div>
+		<div class="site-mobile-menu-body"></div>
+	</div>
+
+	<header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-6 col-xl-2">
+				</div>
+				<div class="col-12 col-md-10 d-none d-xl-block">
+					<nav class="site-navigation position-relative text-right" role="navigation">
+						<ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+							<li>
+								<a href="index.html" class="nav-link">Poke-Api</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;">
+					<a href="#" class="site-menu-toggle js-menu-toggle float-right"><span
+							class="icon-menu h3"></span></a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="section-top">
+		<div class="container">
+			<div class="col-lg-10 offset-lg-1 col-xs-12 text-center">
+				<div class="section-top-title wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s"
+					data-wow-offset="0">
+					<h1>Poke - API</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="blog-page section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 col-xs-12">
+					<div class="single_blog_page">
+						<section class="section-padding">
+							<div class="container">
+								<div class="signup_form">
+									<form novalidate="" class="validate" name="mc-embedded-subscribe-form" method="post"
+										action="#">
+										<div class="row">
+											<div class="col-10">
+												<input type="text" placeholder="Ej.: bulbasaur" id="idPokemon"
+													class="form-control" name="idPokemon">
+											</div>
+											<div class="btn-bottom">
+												<button class="btn btn-detault btn-light-bg" name="subscribe"
+													type="button" onclick="buscarPokemon()">Buscar</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="container div-center">
+								<div class="col-6 ">
+									<div id="pokemon">
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="footer_social">
+						<ul>
+							<li><a data-toggle="tooltip" data-placement="top" title="Facebook" href="#"><i
+										class="fa fa-facebook"></i></a>
+							</li>
+							<li><a data-toggle="tooltip" data-placement="top" title="Twitter" href="#"><i
+										class="fa fa-instagram"></i></a>
+							</li>
+							<li><a data-toggle="tooltip" data-placement="top" title="Google Plus" href="#"><i
+										class="fa fa-google-plus"></i></a>
+							</li>
+							<li><a data-toggle="tooltip" data-placement="top" title="Linkedin" href="#"><i
+										class="fa fa-linkedin"></i></a>
+							</li>
+							<li><a data-toggle="tooltip" data-placement="top" title="Youtube" href="#"><i
+										class="fa fa-youtube"></i></a>
+							</li>
+							<li><a data-toggle="tooltip" data-placement="top" title="Skype" href="#"><i
+										class="fa fa-skype"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-sm-12 col-xs-12">
+					<div class="single_footer caja-40">
+						<h4>Enlaces</h4>
+						<div class="footer_contact">
+							<ul>
+								<li><a href="index.html">Poke-Api</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-md-12 col-sm-12 col-xs-12 wow zoomIn">
+					<p class="footer_copyright">Gosun &copy; 2026 Todos Los Derechos Reservados. Realizado por <a
+							href="#" target="_blank">Rolando Freddy Aruquipa Mamani</a></p>.
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="assets/template/js/jquery-1.12.4.min.js"></script>
+	<script src="assets/template/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/template/js/modernizr-2.8.3.min.js"></script>
+	<script src="assets/template/js/menu.js"></script>
+	<script src="assets/template/js/jquery.sticky.js"></script>
+	<script src="assets/template/js/scrolltopcontrol.js"></script>
+	<script src="assets/template/js/wow.min.js"></script>
+	<script src="assets/template/js/scripts.js"></script>
+	<script src="assets/template/DataTables/datatables.min.js"></script>
+	<script src="assets/template/js/tabla.js"></script>
+	<script src="assets/js/app.js"></script>
+</body>
+
+</html>
