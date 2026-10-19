@@ -72,6 +72,9 @@ fetch(url, {
 .then(data => console.log("Respuesta del servidor:", data))
 .catch(error => console.error("Error:", error));
 ```
+
+---
+
 # 3. PUT
 
 ## ¿Para qué sirve?
@@ -121,6 +124,9 @@ fetch(url, {
     console.error("Error al actualizar el recurso:", error);
   });
   ```
+
+---
+
 # 4. PATCH
 
 ## ¿Para qué sirve?
@@ -172,7 +178,67 @@ fetch(url, {
     console.log("Recurso actualizado:", data);
   })
   .catch(error => {
-    console.error("Error al actualizar:", error);
+      console.error("Error al actualizar:", error);
   });
 ```
 
+---
+
+# 5. DELETE
+
+## ¿Para qué sirve?
+
+El método HTTP **DELETE** se utiliza para solicitar al servidor que **elimine un recurso específico** identificado por una URI (Uniform Resource Identifier). 
+
+En el contexto de las arquitecturas RESTful, es una de las operaciones CRUD básicas (Delete/Borrar) y es fundamental para la gestión del ciclo de vida de los datos, permitiendo a los clientes eliminar registros como usuarios, publicaciones, comentarios o cualquier otra entidad gestionada por la API.
+
+Características clave:
+- **Idempotente**: Realizar la misma solicitud DELETE múltiples veces tiene el mismo efecto que realizarla una sola vez. Si el recurso ya fue eliminado, las solicitudes subsiguientes generalmente devolverán un `404 Not Found` o un `200 OK` / `204 No Content` sin causar efectos secundarios adicionales.
+- **Seguro**: No se considera un método "seguro" (en términos HTTP, "seguro" significa que no modifica el estado del servidor), ya que su propósito explícito es alterar el estado al borrar datos.
+
+---
+
+## ¿Cómo se usa?
+
+Para usar el método DELETE, se debe enviar una solicitud al endpoint que representa el recurso, **incluyendo el identificador único del recurso en la URL**. 
+
+### Reglas y mejores prácticas:
+1. **URL**: El identificador del recurso debe ir en la ruta (ej. `/posts/1`).
+2. **Cuerpo de la solicitud (Body)**: Aunque la especificación HTTP no prohíbe enviar un cuerpo en una solicitud DELETE, **no es una práctica recomendada**. La mayoría de los servidores y proxies lo ignoran o lo rechazan. Toda la información necesaria para identificar el recurso debe estar en la URL o en encabezados (headers) de autenticación.
+3. **Autenticación**: Casi siempre requerirá tokens de acceso (ej. `Authorization: Bearer <token>`) para garantizar que el usuario tenga permisos para eliminar el recurso.
+4. **Respuestas típicas del servidor**:
+   - `200 OK`: El recurso fue eliminado y la respuesta incluye un mensaje o representación del estado.
+   - `202 Accepted`: La solicitud de eliminación ha sido aceptada, pero el proceso aún no se ha completado (común en procesos en segundo plano).
+   - `204 No Content`: El recurso fue eliminado con éxito y no hay contenido adicional que devolver en la respuesta (la más común y recomendada).
+   - `404 Not Found`: El recurso que se intenta eliminar no existe.
+   - `403 Forbidden`: El cliente no tiene permisos para eliminar este recurso.
+
+---
+
+## Ejemplo Real
+
+Utilizaremos la API pública de pruebas **[JSONPlaceholder](https://jsonplaceholder.typicode.com/)**, que simula una base de datos de publicaciones (posts). 
+
+> **Nota**: JSONPlaceholder simula la eliminación. Devolverá una respuesta de éxito, pero el recurso no se eliminará realmente de su base de datos compartida, lo que lo hace perfecto para pruebas seguras.
+
+### 1. Usando cURL (Línea de comandos)
+```javascript
+const postId = 1;
+const url = `https://jsonplaceholder.typicode.com/posts/${postId}`;
+
+fetch(url, {
+  method: 'DELETE',
+  headers: {
+    'Content-Type': 'application/json',
+    // 'Authorization': 'Bearer TU_TOKEN_AQUI' // Descomentar si la API requiere autenticación
+  }
+})
+.then(response => {
+  if (response.ok) {
+    console.log(`Recurso eliminado exitosamente. Estado: ${response.status}`);
+  } else {
+    console.error(`Error al eliminar. Estado: ${response.status}`);
+  }
+})
+.catch(error => console.error('Error de red:', error));
+```
