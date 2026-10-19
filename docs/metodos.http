@@ -1,0 +1,16 @@
+###✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+# VARIABLES GLOBALES
+
+@protocol = https
+@hostname = jsonplaceholder.typicode.com
+@port = 443
+@host = {{protocol}}://{{hostname}}:{{port}}
+@contentType = application/json
+
+###✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+# OBTENER TODOS LOS ATRIBUTOS DEL RECURSO
+
+@post = posts/1
+
+GET {{host}}/{{post}} HTTP/1.1
+
